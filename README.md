@@ -1,103 +1,121 @@
-[index.html](https://github.com/user-attachments/files/24414531/index.html)
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>JAAT CHEATS | Official Links</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Icons -->
-<link rel="stylesheet"https://cdn.discordapp.com/attachments/1434459559727992852/1456911778146680852/image-3.png?ex=695a1654&is=6958c4d4&hm=b6b4bf029aed73a0b69a03aa07b08f7afbd7ab5dcc4e9e81a1190a5b41470b46">
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family:'Poppins', sans-serif;
 }
 
 body{
   height:100vh;
-  overflow:hidden;
   background:#000;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:white;
+  color:#fff;
+  overflow:hidden;
 }
 
-/* PARTICLE BACKGROUND */
+/* PARTICLES */
 canvas{
   position:fixed;
-  top:0;
-  left:0;
+  inset:0;
   z-index:-1;
 }
 
-/* MAIN CARD */
+/* CARD */
 .card{
-  width:320px;
+  width:340px;
   background:rgba(255,255,255,0.08);
-  border-radius:22px;
-  padding:25px 20px;
-  backdrop-filter: blur(12px);
-  box-shadow:0 0 40px rgba(255,0,0,0.4);
+  border-radius:26px;
+  padding:30px 22px;
+  backdrop-filter:blur(15px);
+  box-shadow:
+    0 0 40px rgba(255,0,0,0.35),
+    inset 0 0 20px rgba(255,255,255,0.05);
   text-align:center;
 }
 
-/* PROFILE IMAGE */
+/* PROFILE */
 .profile img{
-  width:110px;
-  height:110px;
+  width:120px;
+  height:120px;
   border-radius:50%;
   border:4px solid #ff2d2d;
-  box-shadow:0 0 25px red;
+  box-shadow:0 0 30px red;
 }
 
 /* TEXT */
 h1{
-  margin-top:15px;
+  margin-top:18px;
   font-size:26px;
   letter-spacing:1px;
 }
 
 .status{
+  margin:6px 0 22px;
   color:#00ff6a;
   font-size:14px;
-  margin:5px 0 20px;
 }
 
 /* LINKS */
 .links{
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:14px;
 }
 
 .links a{
-  padding:12px;
-  border-radius:14px;
+  padding:14px;
+  border-radius:16px;
   text-decoration:none;
   color:white;
   font-size:16px;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
-  transition:0.3s;
+  gap:12px;
+  transition:0.35s;
+  position:relative;
+  overflow:hidden;
+}
+
+.links a::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+  transform:translateX(-100%);
+}
+
+.links a:hover::after{
+  transform:translateX(100%);
+  transition:0.6s;
 }
 
 .links a:hover{
-  transform:scale(1.07);
-  box-shadow:0 0 20px currentColor;
+  transform:scale(1.08);
+  box-shadow:0 0 25px currentColor;
 }
 
 /* COLORS */
-.yt{background:rgba(255,0,0,0.2); color:#ff3b3b;}
-.ig{background:rgba(255,0,200,0.2); color:#ff4fd8;}
-.dc{background:rgba(80,120,255,0.2); color:#5b8cff;}
-.tg{background:rgba(0,200,255,0.2); color:#00d9ff;}
-
+.yt{background:rgba(255,0,0,0.25); color:#ff3b3b;}
+.ig{background:rgba(255,0,200,0.25); color:#ff4fd8;}
+.dc{background:rgba(80,120,255,0.25); color:#5b8cff;}
+.tg{background:rgba(0,200,255,0.25); color:#00d9ff;}
 </style>
 </head>
 
@@ -136,8 +154,12 @@ h1{
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resize(){
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
 
 let particles = [];
 
@@ -146,8 +168,8 @@ for(let i=0;i<120;i++){
     x:Math.random()*canvas.width,
     y:Math.random()*canvas.height,
     r:Math.random()*4+1,
-    dx:(Math.random()-0.5)*1.5,
-    dy:(Math.random()-0.5)*1.5,
+    dx:(Math.random()-0.5)*1.3,
+    dy:(Math.random()-0.5)*1.3,
     color:`hsl(${Math.random()*360},100%,60%)`
   });
 }
@@ -169,11 +191,6 @@ function animate(){
   requestAnimationFrame(animate);
 }
 animate();
-
-window.onresize=()=>{
-  canvas.width=window.innerWidth;
-  canvas.height=window.innerHeight;
-}
 </script>
 
 </body>
