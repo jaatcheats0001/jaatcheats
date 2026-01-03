@@ -125,7 +125,7 @@ h1{
 
 <div class="card">
   <div class="profile">
-    <img src="https://cdn.discordapp.com/attachments/1434459559727992852/1456911778146680852/image-3.png?ex=695a1654&is=6958c4d4&hm=b6b4bf029aed73a0b69a03aa07b08f7afbd7ab5dcc4e9e81a1190a5b41470b46">
+    <img src="https://cdn.discordapp.com/attachments/1434459559727992852/1456911778146680852/image-3.png">
   </div>
 
   <h1>JAAT CHEATS</h1>
